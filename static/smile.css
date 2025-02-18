@@ -107,8 +107,8 @@ a, a:visited {
 }
 
 .product-box-image {
+    width: 150px;
     height: 150px;
-    overflow: hidden;
 }
 
 .product-box-info {
