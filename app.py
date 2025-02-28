@@ -1,7 +1,19 @@
 from flask import Flask, render_template
+import sqlite3
+from sqlite3 import Error
+
+
+DATABASE = "cafe_db"
 
 app = Flask(__name__)
 
+def connect_to_database(db_file):
+    try:
+        con = sqlite3.connect(db_file)
+        return con
+    except Error:
+        print("Failed to connect to DB")
+    return
 
 @app.route('/')
 def render_home():
@@ -10,6 +22,11 @@ def render_home():
 
 @app.route('/menu')
 def render_menu():
+    connection = connect_to_database(DATABASE)
+    query = "SELECT prod_name, prod_desc, prod_img, prod_price FROM DATABASE"
+    cur = connection()
+    cur.execute(query)
+    cur.fetchall()
     return render_template('menu.html')
 
 
