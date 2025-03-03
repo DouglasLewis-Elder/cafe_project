@@ -23,10 +23,11 @@ def render_home():
 @app.route('/menu')
 def render_menu():
     connection = connect_to_database(DATABASE)
-    query = "SELECT prod_name, prod_desc, prod_img, prod_price FROM DATABASE"
-    cur = connection()
+    query = "SELECT name, description, volume, image, price FROM products"
+    cur = connection.cursor()
     cur.execute(query)
-    cur.fetchall()
+    product_list = cur.fetchall()
+    print(product_list)
     return render_template('menu.html')
 
 
