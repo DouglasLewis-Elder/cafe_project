@@ -9,9 +9,9 @@ menu
 
         {% for coffee in list_of_coffees %}
             <div class="product-box">
-                <h3 class="product-box-heading"> Espresso </h3>
-                <img src="/static/images/espresso.jpg" class="product-box-image">
-                <p class="product-box-info"> A small, sharp coffee </p>
+                <h3 class="product-box-heading"> {{ coffee[0] }} </h3>
+                <img src="/static/images/{{ coffee[3] }}.jpg" class="product-box-image">
+                <p class="product-box-info"> {{ coffee[1]}} </p>
             </div>
         {% endfor %}
     </div>
