@@ -12,6 +12,8 @@ menu
                 <h3 class="product-box-heading"> {{ coffee[0] }} </h3>
                 <img src="/static/images/{{ coffee[3] }}.jpg" class="product-box-image">
                 <p class="product-box-info"> {{ coffee[1]}} </p>
+                <p><strong>Size: </strong>{{ coffee[2] }}mL</p>
+                <p><strong>Price: </strong>${{ coffee[4] }}</p>
             </div>
         {% endfor %}
     </div>

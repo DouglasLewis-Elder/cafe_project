@@ -26,7 +26,6 @@ def render_menu():
     cur = connection.cursor()
     cur.execute(query)
     product_list = cur.fetchall()
-    print(product_list)
     return render_template('menu.html', list_of_coffees=product_list)
 
 
