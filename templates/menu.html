@@ -6,12 +6,13 @@ menu
 
 {% block main %}
     <div class="products">
-    {%  %}
-        <div class="product-box">
-            <h3 class="product-box-heading"> Espresso </h3>
-            <img src="static/images/espresso.jpg" class="product-box-image">
-            <p class="product-box-info"> A small, sharp coffee </p>
-        </div>
-    {% endfor %}
+
+        {% for coffee in list_of_coffees %}
+            <div class="product-box">
+                <h3 class="product-box-heading"> Espresso </h3>
+                <img src="/static/images/espresso.jpg" class="product-box-image">
+                <p class="product-box-info"> A small, sharp coffee </p>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

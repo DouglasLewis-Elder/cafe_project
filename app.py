@@ -4,7 +4,6 @@ from sqlite3 import Error
 
 
 DATABASE = "cafe_db"
-
 app = Flask(__name__)
 
 def connect_to_database(db_file):
@@ -28,7 +27,7 @@ def render_menu():
     cur.execute(query)
     product_list = cur.fetchall()
     print(product_list)
-    return render_template('menu.html')
+    return render_template('menu.html', list_of_coffees=product_list)
 
 
 @app.route('/contact')
